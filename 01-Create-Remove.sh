@@ -1,13 +1,18 @@
 #!/bin/bash
 
-#Usage Examples of this create / Remove bash script.
+##############################################################################
+# Author: CHETHAN N
+# Date: 11/11/2025
 #
-#To create an new directory and create two files inside new directory
-#bash 01-create-remove.sh 1
+# This bash script can create / remove the directory and files
 #
-#To remove / delete the files and Directory which were already created
-#bash 01-create-remove.sh 0
-
+# To create an new directory and create two files inside new directory
+# bash 01-create-remove.sh 1
+#
+# To remove / delete the files and Directory which were already created
+# bash 01-create-remove.sh 0
+#
+##############################################################################
 # Directory Name
 DIR_NAME="script_dir";
 
