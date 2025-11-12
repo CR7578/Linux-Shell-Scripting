@@ -16,3 +16,8 @@ This table provides a quick guide to every script in the repository. **Remember 
 | `README.md` | **Repository Guide.** The file you are currently reading, providing context, prerequisites, and usage instructions. | None | Markdown structure and documentation standards. |
 
 ---
+## AWS Report Output Sample
+
+This is a sample of the structured, color-coded output from the script:
+
+![AWS Report Output Screenshot](assets/aws-resource-report.png)
