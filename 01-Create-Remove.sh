@@ -17,6 +17,7 @@
 DIR_NAME="script_dir";
 
 
+
 if [ $# -ne 1 ]; then
 	echo "Invalid Usage of scrpit";
 	echo "Usage Example :-";
