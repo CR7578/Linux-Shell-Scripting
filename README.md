@@ -16,8 +16,12 @@ This table provides a quick guide to every script in the repository. **Remember 
 | `README.md` | **Repository Guide.** The file you are currently reading, providing context, prerequisites, and usage instructions. | None | Markdown structure and documentation standards. |
 
 ---
-## AWS Report Output Sample
+## Report Output Sample
 
-This is a sample of the structured, color-coded output from the script:
+This is a sample of the structured, output from the `02-Node-Health.sh` script:
+
+![Server Health check Output Screenshot](assets/server-health-report.png)
+
+This is a sample of the structured, output from the `03-aws-usage-report.sh` script:
 
 ![AWS Report Output Screenshot](assets/aws-resource-report.png)
