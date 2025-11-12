@@ -17,11 +17,13 @@ This table provides a quick guide to every script in the repository. **Remember 
 
 ---
 ## Report Output Sample
-
+---
+## 02-Node-Health.sh
 This is a sample of the structured, output from the `02-Node-Health.sh` script:
 
 ![Server Health check Output Screenshot](assets/server-health-report.png)
 
+## 03-aws-usage-report.sh
 This is a sample of the structured, output from the `03-aws-usage-report.sh` script:
 
 ![AWS Report Output Screenshot](assets/aws-resource-report.png)
