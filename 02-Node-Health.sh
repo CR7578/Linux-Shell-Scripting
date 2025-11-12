@@ -25,7 +25,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color (Reset)
 
 # --- Configuration Section ---
-REPORT_FILE="/tmp/Node_health_report_$(date +%Y%m%d_%H%M%S).txt"
+REPORT_FILE="/tmp/Node_health_report_$(date +%Y%m%d).txt"
 CPU_LOAD_1M_THRESHOLD=2.0      # Threshold for 1-minute Load Average
 CPU_LOAD_5M_THRESHOLD=1.5      # Threshold for 5-minute Load Average
 MEM_THRESHOLD=90               # Threshold for Memory Usage percentage
