@@ -2,12 +2,6 @@
 
 This repository is a practical showcase of professional-grade **Bash shell scripting**, focusing on essential DevOps tasks, system monitoring, and structured cloud resource reporting.
 
-The scripts demonstrate proficiency in:
-
-* **Automation:** Routine infrastructure and system management tasks.
-* **Best Practices:** Robust error handling (`set -euo pipefail`), dependency checking, and clear documentation.
-* **Cloud Interaction:** Efficiently querying, processing, and formatting AWS data using the CLI and `jq`.
-
 ---
 
 ## 📂 File Index & Overview
