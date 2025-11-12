@@ -4,8 +4,13 @@
 # Author : CHETHAN N
 # Date : 11/12/2025
 #
+<<<<<<< HEAD
 # This Script outputs a comprehensive, color-coded report 
 # on the Node/Server/Instance health, including CPU, Memory, 
+=======
+# This Script outputs a comprehensive, color-coded report
+# on the Node/Server/Instance health, including CPU, Memory,
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
 # Disk, and Process metrics.
 #
 # Version : v2.3 - Advanced Industry Report (Root Disk Only)
@@ -25,7 +30,11 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color (Reset)
 
 # --- Configuration Section ---
+<<<<<<< HEAD
 REPORT_FILE="/tmp/Node_health_report_$(date +%Y%m%d).txt"
+=======
+REPORT_FILE="/tmp/Node_health_report_$(date +%Y%m%d_%H%M%S).txt"
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
 CPU_LOAD_1M_THRESHOLD=2.0      # Threshold for 1-minute Load Average
 CPU_LOAD_5M_THRESHOLD=1.5      # Threshold for 5-minute Load Average
 MEM_THRESHOLD=90               # Threshold for Memory Usage percentage
@@ -59,7 +68,11 @@ function check_system_info() {
 
 function check_cpu_load() {
     log "\n### 2. CPU LOAD & USAGE ###"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     # Get all three load averages
     LOAD_AVG=$(uptime | awk -F"load average: " '{print $2}' | sed 's/,//g')
     LOAD_1M=$(echo "$LOAD_AVG" | awk '{print $1}')
@@ -67,7 +80,11 @@ function check_cpu_load() {
     LOAD_15M=$(echo "$LOAD_AVG" | awk '{print $3}')
 
     log "Current Load Average (1m, 5m, 15m): ${LOAD_AVG}"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     # Check 1-minute load. Use `if (( ... ))` for proper floating-point comparison using bc.
     if (( $(echo "$LOAD_1M > $CPU_LOAD_1M_THRESHOLD" | bc -l) )); then
         log "${RED}CRITICAL: 1-min Load ($LOAD_1M) is above threshold ($CPU_LOAD_1M_THRESHOLD).${NC}"
@@ -82,11 +99,16 @@ function check_cpu_load() {
 
 function check_memory_usage() {
     log "\n### 3. MEMORY USAGE ###"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     # Calculate RAM usage percentage
     MEM_FREE=$(free | grep Mem | awk '{print $4+$6}') # Free + Cached/Buffers
     MEM_TOTAL=$(free | grep Mem | awk '{print $2}')
     MEM_USED_PERCENT=$(echo "scale=2; 100 * ($MEM_TOTAL - $MEM_FREE) / $MEM_TOTAL" | bc -l)
+<<<<<<< HEAD
     
     # Get Swap usage
     SWAP_USED=$(free | grep Swap | awk '{print $3}')
@@ -96,6 +118,17 @@ function check_memory_usage() {
     log "Total RAM: $(echo "scale=2; $MEM_TOTAL / 1024 / 1024" | bc -l) GB"
     log "Used RAM: $(echo "scale=2; $MEM_USED_PERCENT / 1" | bc)%" # Format percentage
     
+=======
+
+    # Get Swap usage
+    SWAP_USED=$(free | grep Swap | awk '{print $3}')
+    SWAP_TOTAL=$(free | grep Swap | awk '{print $2}')
+
+    # Added scale=2 for cleaner GB output
+    log "Total RAM: $(echo "scale=2; $MEM_TOTAL / 1024 / 1024" | bc -l) GB"
+    log "Used RAM: $(echo "scale=2; $MEM_USED_PERCENT / 1" | bc)%" # Format percentage
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     # Check Memory usage.
     if (( $(echo "$MEM_USED_PERCENT > $MEM_THRESHOLD" | bc -l) )); then
         log "${RED}CRITICAL: RAM utilization ($(echo "scale=2; $MEM_USED_PERCENT / 1" | bc)%) is above threshold ($MEM_THRESHOLD%).${NC}"
@@ -104,7 +137,11 @@ function check_memory_usage() {
     else
         log "${GREEN}STATUS: RAM utilization is healthy.${NC}"
     fi
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     # Check Swap
     if [ "$SWAP_TOTAL" -gt 0 ] && [ "$SWAP_USED" -gt 0 ]; then
         log "SWAP Used: $(echo "scale=2; 100 * $SWAP_USED / $SWAP_TOTAL" | bc -l)%"
@@ -140,12 +177,17 @@ function check_disk_usage() {
     else
         log "${GREEN}STATUS: Root disk usage is healthy.${NC}"
     fi
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     log "----------------------------------------------------------"
 }
 
 function check_process_count() {
     log "\n### 5. PROCESS AND USER COUNT ###"
+<<<<<<< HEAD
     
     PROCESS_COUNT=$(ps -e | wc -l)
     USER_COUNT=$(who | awk '{print $1}' | sort -u | wc -l)
@@ -153,6 +195,15 @@ function check_process_count() {
     log "Total Running Processes: $PROCESS_COUNT"
     log "Total Logged-in Users: $USER_COUNT"
     
+=======
+
+    PROCESS_COUNT=$(ps -e | wc -l)
+    USER_COUNT=$(who | awk '{print $1}' | sort -u | wc -l)
+
+    log "Total Running Processes: $PROCESS_COUNT"
+    log "Total Logged-in Users: $USER_COUNT"
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     if [ "$PROCESS_COUNT" -gt "$PROC_THRESHOLD" ]; then
         log "${YELLOW}WARNING: Total processes ($PROCESS_COUNT) is high (>${PROC_THRESHOLD}).${NC}"
         # Log top 5 processes using the most memory/CPU for quick diagnosis
@@ -161,7 +212,11 @@ function check_process_count() {
     else
         log "${GREEN}STATUS: Process count is normal.${NC}"
     fi
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8268409802cd296dbb6e44c864c8f528e8116c0a
     log "----------------------------------------------------------"
 }
 
