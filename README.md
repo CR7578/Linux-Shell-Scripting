@@ -18,11 +18,18 @@ This table provides a quick guide to every script in the repository. **Remember 
 ---
 ## Report Output Sample
 ---
+## 01-Create-Remove.sh
+This is a sample of the structured, output from the `1-Create-Remove.sh` script:
+
+![Create / Remove Output Screenshot](assets/create-remove.png)
+
+---
 ## 02-Node-Health.sh
 This is a sample of the structured, output from the `02-Node-Health.sh` script:
 
 ![Server Health check Output Screenshot](assets/server-health-report.png)
 
+---
 ## 03-aws-usage-report.sh
 This is a sample of the structured, output from the `03-aws-usage-report.sh` script:
 
